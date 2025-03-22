@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Login successful!");
             sessionStorage.setItem("loggedIn", "true"); //  تخزين حالة تسجيل الدخول
             localStorage.removeItem("exited"); //  إزالة حالة تسجيل الخروج
-            window.location.replace("./test.html"); // توجيه المستخدم للصفحة الرئيسية
+            window.location.replace("./Home.html"); // توجيه المستخدم للصفحة الرئيسية
         } else {
             alert("Invalid username or password.");
         }

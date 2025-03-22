@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         localStorage.setItem("userData", JSON.stringify(userData));
         alert("Sign-up successful! Redirecting to login page...");
-        window.location.href = "./test.html";
+        window.location.href = "./login.html";
     });
 });
 

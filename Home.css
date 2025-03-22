@@ -213,9 +213,12 @@ header h1 {
     /* تثبيت حجم الأيقونة */
     text-align: center;
 }
+#sidebar ul li i:hover{
+color: #000000;
 
+}
 #sidebar ul li a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     font-size: 16px;
     opacity: 0;
@@ -226,6 +229,10 @@ header h1 {
 #sidebar:hover ul li a {
     opacity: 1;
     /* إظهار النص عند تمرير الماوس */
+    color: #ffffff;
+}
+#sidebar:hover ul li a:hover{
+    color: #000000;
 }
 
 .scroll-animation {
@@ -304,35 +311,122 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: rgba(77, 44, 0, 0.952); /* لون الفوتر */
+    background-color: rgba(77, 44, 0, 0.952);
+    /* لون الفوتر */
     color: white;
     text-align: center;
     padding: 15px;
-    opacity: 0;                /* البداية بخفاء */
-    transform: translateY(50px); /* يبدأ متحركاً لأسفل */
+    opacity: 0;
+    /* البداية بخفاء */
+    transform: translateY(50px);
+    /* يبدأ متحركاً لأسفل */
     transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
 footer.show {
     opacity: 1;
-    transform: translateY(0); /* الرجوع لمكانه الطبيعي */
+    transform: translateY(0);
+    /* الرجوع لمكانه الطبيعي */
 }
 
 footer.hide {
     opacity: 0;
-    transform: translateY(50px); /* يتحرك للأسفل مع الاختفاء */
+    transform: translateY(50px);
+    /* يتحرك للأسفل مع الاختفاء */
 }
+
 .social-icons {
     display: flex;
-    gap: 10px; /* زيادة المسافة بين الأيقونات */
+    gap: 10px;
+    /* زيادة المسافة بين الأيقونات */
     justify-content: center;
-}.social-icons i {
+}
+
+.social-icons i {
     font-size: 24px;
     transition: transform 0.3s ease;
 }
 
 .social-icons i:hover {
-    transform: scale(1.2); /* يكبر الأيقونة عند تمرير الماوس */
+    transform: scale(1.2);
+    /* يكبر الأيقونة عند تمرير الماوس */
+    color: #ff6600;
 }
 
 
+footer nav a {
+    color: black;
+    /* اللون الأساسي */
+    text-decoration: none;
+    /* إزالة التسطير */
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+    /* تأثيرات سلسة */
+    padding: 5px 10px;
+    /* تحسين التباعد */
+    display: inline-block;
+    /* لضمان تأثير الظل */
+}
+
+footer nav a:hover {
+    color: #ff6600;
+    /* تغيير اللون عند مرور الماوس */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* إضافة ظل */
+    border-radius: 5px;
+    /* حواف ناعمة */
+}
+/* Responsive code  */
+@media (max-width: 1024px) {
+    #search-box {
+        width: 1px;
+        position: relative;
+        align-items:center;
+    }
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 200px;
+        padding-top: 15px;
+    }
+    @media (max-width: 768px) {
+        body {
+            background-size: contain; /* Ensures the whole image fits */
+            background-attachment: scroll; /* Allows scrolling */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        body {
+            background-size: cover; /* Keeps the image full-screen */
+            background-position: top; /* Adjust positioning */
+        }
+    }
+
+    .book-list {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    #sidebar {
+        transform: translateX(-100%);
+        position: absolute;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #search-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    footer nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

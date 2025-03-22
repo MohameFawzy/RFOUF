@@ -183,3 +183,63 @@ p {
 .social-icons i:hover {
     transform: scale(1.2); /* يكبر الأيقونة عند تمرير الماوس */
 }
+
+
+/* Responsive code */
+@media (max-width: 768px) {
+    .glass-container {
+        padding: 20px;
+    }
+    @media (max-width: 768px) {
+        body {
+            background-size: contain; /* Ensures the whole image fits */
+            background-attachment: scroll; /* Allows scrolling */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        body {
+            background-size: cover; /* Keeps the image full-screen */
+            background-position: top; /* Adjust positioning */
+        }
+    }
+
+    .login-box {
+        width: 90%;
+    }
+
+    .options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+ @media (max-width: 480px) {
+    .login-box h2 {
+        font-size: 22px;
+    }
+
+    input[type="email"], input[type="tel"], input[type="text"], input[type="password"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .options label {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+        margin: 5px;
+    }
+} 

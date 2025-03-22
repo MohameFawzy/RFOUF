@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/png" href="fav.ico">
     <title>Digital Library</title>
-    <link rel="stylesheet" href="./test.css">
+    <link rel="stylesheet" href="./Home.css">
 
 </head>
 
@@ -19,18 +19,19 @@
         <div id="search-container">
             <i id="search-icon" class="fas fa-search"></i>
             <input type="text" id="search-box" placeholder="Search For Book..." onfocus="this.placeholder=''"
-                onblur="this.placeholder='Search Google...'">
+                onblur="this.placeholder='Search For Book...'">
         </div>
     </header>
 
     <div id="sidebar">
         <ul>
-            <li><i class="fas fa-home"></i> <a href="./test.html">Home</a></li>
+            <li><i class="fas fa-home"></i> <a href="./Home.html">Home</a></li>
             <li><i class="fas fa-fire"></i> <a href="#">Trending</a></li>
             <li><i class="fas fa-book"></i> <a href="#">Library</a></li>
             <li><i class="fas fa-layer-group"></i> <a href="#">Categories</a></li>
             <li><i class="fas fa-user"></i> <a href="#">Profile</a></li>
             <li><i class="fas fa-cog"></i> <a href="#">Settings</a></li>
+            <li><i class="fa-solid fa-question-circle"></i><a href="#"> Q&A</a></i></i></li>
             <li><i class="fas fa-sign-out-alt"></i> <a href="#" id="logout">Logout</a></li>
         </ul>
     </div>
@@ -70,7 +71,7 @@
         <h3>Recommended for You</h3>
         <div class="book-list" id="recommended"></div>
     </section>
-    
+
     <footer class="footer">
         <p>© 2025 Digital Library. All rights reserved.</p>
         <div class="social-icons">
@@ -88,7 +89,7 @@
         </nav>
     </footer>
 
-    <script src="./test.js"></script>
+    <script src="./Home.js"></script>
 </body>
 
 </html>
