@@ -1,16 +1,14 @@
 /* General Styles */
 body {
-
-
     font-family: Arial, sans-serif;
     margin: 0;
     padding-top: 70px;
-    background: url(./DALL·E\ 2025-03-14\ 01.15.42\ -\ A\ modern\ digital\ library\ homepage\ concept.\ A\ sleek\,\ futuristic\ library\ interface\ with\ bookshelves\ transitioning\ into\ digital\ screens.\ A\ warm\,\ wooden\ a.webp) no-repeat center center fixed;
+    background: url(./photos/home.jpg.webp) no-repeat center center fixed;
     background-size: cover;
     color: #fff;
     overflow-x: hidden;
     position: relative;
-
+    margin-left: 60px;
 }
 
 /* الضبابيه */
@@ -21,49 +19,36 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
+    margin-left: 60px;
     backdrop-filter: blur(10px);
     /* التحكم في شدة الضبابية */
     -webkit-backdrop-filter: blur(10px);
     z-index: -1;
 }
 
-/* تخصيص عرض شريط التمرير */
+
 ::-webkit-scrollbar {
     width: 8px;
-    /* جعله أعرض قليلاً لمظهر أكثر فخامة */
 }
 
-/* تخصيص المسار (الخلفية) */
 ::-webkit-scrollbar-track {
     background: #3a2400;
-    /* بني غامق جدًا */
     border-radius: 10px;
-    /* تدوير الحواف */
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
-    /* إضافة ظل داخلي */
 }
 
-/* تخصيص الشريط المتحرك */
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #e0ac69, #b57f50);
-    /* تدرج ذهبي أنيق */
     border-radius: 10px;
-    /* تدوير الحواف */
     box-shadow: 0 0 8px rgba(255, 223, 186, 0.5);
-    /* ظل ذهبي لإضفاء لمسة فاخرة */
     transition: background 0.3s, box-shadow 0.3s;
-    /* تأثير ناعم عند التغيير */
 }
 
-/* تأثير عند تمرير الماوس فوقه */
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, #b57f50, #8f5e30);
-    /* لون أغمق قليلاً */
     box-shadow: 0 0 12px rgba(255, 223, 186, 0.8);
-    /* تكبير الظل قليلاً */
 }
 
-/* تخصيص زوايا التمرير في الأسفل والأعلى */
 ::-webkit-scrollbar-corner {
     background: #3a2400;
 }
@@ -85,7 +70,6 @@ header {
 
 header h1 {
     margin: 0 auto;
-    /* يجعل العنوان في المنتصف */
     font-size: 22px;
     font-weight: bold;
     text-align: center;
@@ -97,12 +81,15 @@ header h1 {
     text-align: center;
     color: white;
     border-right: 2px solid white;
-    /* يعطي شكل المؤشر */
     padding-right: 5px;
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
     animation: blink 0.7s infinite;
+}
+
+#dynamic-text:hover {
+    color: #000000;
 }
 
 @keyframes blink {
@@ -111,6 +98,15 @@ header h1 {
     }
 }
 
+#shopCar {
+    position: relative;
+
+    font-size: medium;
+}
+#shopCar:hover{
+    transform: scale(1.2);
+    color:rgb(255, 255, 255);
+}
 
 #search-icon {
     font-size: 22px;
@@ -141,25 +137,25 @@ header h1 {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-
-
 #search-container.active #search-box {
     width: 250px;
     padding: 10px;
 }
 
-
 #sidebar {
     position: fixed;
     top: 60px;
-    /* يضمن أن يبدأ بعد الهيدر */
     left: 0;
-    width: 70px;
-    /* تصغير الحجم ليكون مناسبًا للأيقونات */
+    width: 60px;
     height: calc(100vh - 60px);
-    /* يجعل الطول مناسبًا بدون التداخل مع الهيدر */
     background: #5e441d;
     padding-top: 20px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+#sidebar:hover {
+    width: 200px;
 }
 
 #sidebar ul {
@@ -169,78 +165,51 @@ header h1 {
 }
 
 #sidebar ul li {
-    text-align: center;
-    padding: 15px 0;
-    transition: background 0.5s;
-}
-
-#sidebar ul li i {
-    font-size: 24px;
-    color: white;
-    transition: transform 0.5s;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    transition: background 0.3s;
 }
 
 #sidebar ul li:hover {
     background: #3E2723;
 }
 
-#sidebar ul li:hover i {
-    transform: scale(1.2);
-}
-
-
-#sidebar:hover {
-    width: 200px;
-    /* يتوسع عند تمرير الماوس */
-}
-
-#sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-#sidebar ul li {
-    padding: 15px;
+#sidebar ul li a {
     display: flex;
     align-items: center;
-    transition: background 0.3s;
+    color: white;
+    text-decoration: none;
 }
 
 #sidebar ul li i {
     font-size: 20px;
-    color: white;
-    width: 50px;
-    /* تثبيت حجم الأيقونة */
+    width: 40px;
     text-align: center;
+    transition: transform 0.3s, color 0.3s;
 }
-#sidebar ul li i:hover{
-color: #000000;
 
+#sidebar ul li i:hover {
+    color: chocolate;
+    transform: scale(1.2);
 }
-#sidebar ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
+
+#sidebar ul li span {
     opacity: 0;
-    /* إخفاء النص */
-    transition: opacity 0.5s;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, margin-left 0.3s;
+    margin-left: 0;
 }
 
-#sidebar:hover ul li a {
+#sidebar:hover ul li span {
     opacity: 1;
-    /* إظهار النص عند تمرير الماوس */
-    color: #ffffff;
-}
-#sidebar:hover ul li a:hover{
-    color: #000000;
+    margin-left: 10px;
 }
 
 .scroll-animation {
     opacity: 0;
     transform: translateX(-60px);
-    /* بدء التحريك من اليسار */
     filter: blur(8px);
-    /* ضبابية بسيطة عند الاختفاء */
     transition: opacity 1s ease-out, transform 1s ease-out, filter 1s ease-out;
 }
 
@@ -250,18 +219,13 @@ color: #000000;
     filter: blur(0);
 }
 
-/* تأثير مختلف لعناصر تتحرك من اليمين */
 .scroll-animation.right {
     transform: translateX(60px);
 }
 
-/* تأثير لعناصر تتحرك من الأسفل */
 .scroll-animation.bottom {
     transform: translateY(60px);
 }
-
-
-
 
 /* Hero Section */
 .hero {
@@ -293,7 +257,6 @@ color: #000000;
     border-radius: 5px;
 }
 
-
 .btn:hover {
     background: #e0f2f1;
 }
@@ -311,8 +274,8 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: rgba(77, 44, 0, 0.952);
-    /* لون الفوتر */
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
     color: white;
     text-align: center;
     padding: 15px;
@@ -337,8 +300,7 @@ footer.hide {
 
 .social-icons {
     display: flex;
-    gap: 10px;
-    /* زيادة المسافة بين الأيقونات */
+    gap: 20px;
     justify-content: center;
 }
 
@@ -349,10 +311,8 @@ footer.hide {
 
 .social-icons i:hover {
     transform: scale(1.2);
-    /* يكبر الأيقونة عند تمرير الماوس */
-    color: #ff6600;
+    color: rgba(0, 0, 0, 0.8);
 }
-
 
 footer nav a {
     color: black;
@@ -368,65 +328,179 @@ footer nav a {
 }
 
 footer nav a:hover {
-    color: #ff6600;
+    color: rgba(0, 188, 212, 0.8);
     /* تغيير اللون عند مرور الماوس */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     /* إضافة ظل */
     border-radius: 5px;
     /* حواف ناعمة */
 }
-/* Responsive code  */
+
+/* شاشات متوسطة (تابلت) */
 @media (max-width: 1024px) {
-    #search-box {
-        width: 1px;
-        position: relative;
-        align-items:center;
+    #sidebar {
+        width: 60px;
     }
 }
 
+/* شاشات صغيرة (موبايل) */
 @media (max-width: 768px) {
-    #sidebar {
-        width: 200px;
-        padding-top: 15px;
-    }
-    @media (max-width: 768px) {
-        body {
-            background-size: contain; /* Ensures the whole image fits */
-            background-attachment: scroll; /* Allows scrolling */
-        }
-    }
-    
-    @media (max-width: 480px) {
-        body {
-            background-size: cover; /* Keeps the image full-screen */
-            background-position: top; /* Adjust positioning */
-        }
+    body {
+        padding-top: 60px;
+        background-size: cover;
+        background-position: center;
     }
 
-    .book-list {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 600px) {
-    #sidebar {
-        transform: translateX(-100%);
-        position: absolute;
+    ::-webkit-scrollbar {
+        width: 6px;
     }
 
     header {
         flex-direction: column;
         text-align: center;
+        padding: 8px;
     }
 
-    #search-container {
-        width: 100%;
-        justify-content: center;
+    header h1 {
+        font-size: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
-    footer nav {
+    /* Sidebar يصبح أيقونات فقط على الشاشات الصغيرة */
+    @media (max-width: 768px) {
+        #sidebar {
+            width: 60px;
+            height: 100vh;
+            position: fixed;
+            /* تثبيت القائمة الجانبية */
+            left: 0;
+            top: 0;
+            background: rgba(94, 68, 29, 0.95);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            transition: width 0.3s ease-in-out;
+            z-index: 1000;
+            /* ضمان أن القائمة تظهر فوق المحتوى */
+        }
+
+        #sidebar ul {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 0;
+        }
+
+        #sidebar ul li {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        #sidebar ul li a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        #sidebar ul li a span {
+            display: none;
+            /* إخفاء النصوص */
+        }
+
+        #sidebar:hover {
+            width: 180px;
+            /* عند المرور بالماوس يظهر النص */
+        }
+
+        #sidebar:hover ul li a span {
+            display: inline;
+            margin-left: 10px;
+        }
+
+        .content {
+            margin-left: 60px;
+            /* يترك مساحة للـ sidebar */
+            width: calc(100% - 60px);
+            /* يأخذ باقي الشاشة */
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            transition: margin-left 0.3s ease-in-out;
+            padding: 10px;
+        }
+
+        #sidebar:hover~.content {
+            margin-left: 180px;
+        }
+    }
+
+    #sidebar:hover~.content {
+        margin-left: 180px;
+    }
+
+    .books {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .books .card {
+        width: 100%;
+        margin: 10px auto;
+        padding: 12px;
+        text-align: center;
+        background: rgba(94, 68, 29, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+        position: relative;
+        padding: 8px;
+    }
+
+    @media (max-width: 480px) {
+        header {
+            padding: 6px;
+        }
+
+        header h1 {
+            font-size: 18px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .hero h2,
+        .books h2 {
+            font-size: 18px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .hero p,
+        .books p {
+            font-size: 14px;
+        }
+
+        .books .card {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            font-size: 14px;
+        }
     }
 }

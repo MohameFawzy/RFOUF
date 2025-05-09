@@ -4,26 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <!-- add icon library -->
+    <title>Library</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="library.css">
     <link rel="icon" type="image/png" href="./photos/fav.ico">
-    <title>RFOUF</title>
-    <link rel="stylesheet" href="./Home.css">
 
 </head>
 
 <body>
     <header>
-
-        <h1 id="dynamic-text">Digital Library</h1>
+        <h1 id="dynamic-text">My Library</h1>
         <div id="search-container">
             <i id="search-icon" class="fas fa-search"></i>
-            <input type="text" id="search-box" placeholder="Search For Book..." onfocus="this.placeholder=''"
-                onblur="this.placeholder='Search For Book...'">
+            <input type="text" id="search-box" placeholder="Search Your Library..." onfocus="this.placeholder=''"
+                onblur="this.placeholder='Search Your Library...'">
         </div>
     </header>
-
     <div id="sidebar">
         <ul>
             <li onclick="location.href='../Home.html'"><a href="../Home.html"><i
@@ -43,44 +39,32 @@
                         class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
         </ul>
     </div>
+    <main class="library-container">
+        <section class="library-section">
+            <h2><i class="fas fa-book-open"></i> Unread Books</h2>
+            <div class="book-list" id="unread-books"></div>
+        </section>
 
-    </div>
-    <!-- main  section-->
-    <section class="hero">
-        <h2>Explore Thousands of Books at Your Fingertips</h2>
-        <p>Read online, download books, and discover new stories</p>
-        <button class="btn">Start Browsing</button>
-    </section>
+        <section class="library-section">
+            <h2><i class="fas fa-heart"></i> Favorites</h2>
+            <div class="book-list" id="favorites"></div>
+        </section>
 
-    <section class="books scroll-animation">
-        <h3>Most Read Books</h3>
-        <div class="book-list" id="most-read"></div>
-    </section>
+        <section class="library-section">
+            <h2><i class="fas fa-bookmark"></i> Saved Books</h2>
+            <div class="book-list" id="saved-books"></div>
+        </section>
 
-    <section class="books scroll-animation">
-        <h3>Latest Arrivals</h3>
-        <div class="book-list" id="latest-arrivals"></div>
-    </section>
+        <section class="library-section">
+            <h2><i class="fas fa-check-circle"></i> Fully Read Books</h2>
+            <div class="book-list" id="fully-read"></div>
+        </section>
 
-    <section class="books scroll-animation">
-        <h3>Most Read Books</h3>
-        <div class="book-list" id="most-read"></div>
-    </section>
-
-    <section class="books scroll-animation">
-        <h3>Latest Arrivals</h3>
-        <div class="book-list" id="latest-arrivals"></div>
-    </section>
-
-    <section class="books scroll-animation">
-        <h3>Categories</h3>
-        <div class="book-list" id="categories"></div>
-    </section>
-
-    <section class="books scroll-animation">
-        <h3>Recommended for You</h3>
-        <div class="book-list" id="recommended"></div>
-    </section>
+        <section class="library-section">
+            <h2><i class="fas fa-clock"></i> To Read Later</h2>
+            <div class="book-list" id="to-read-later"></div>
+        </section>
+    </main>
 
     <footer class="footer">
         <p>© 2025 Digital Library. All rights reserved.</p>
@@ -95,11 +79,12 @@
         <nav>
             <a href="#">About Us</a>
             <a href="#">Contact</a>
-            <a href="#">Privacy Policy</a>
+            <a href="#">Privacy</a>
+            <a href="#">Privacy</a>
         </nav>
     </footer>
 
-    <script src="./Home.js"></script>
+    <script src="library.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,9 @@
+//  side bar animation code 
 function toggleSidebar() {
     var sidebar = document.getElementById("sidebar");
     sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
 }
-
+// searck bar code
 function toggleSearch() {
     var searchBox = document.getElementById("search-box");
     searchBox.style.display = searchBox.style.display === "block" ? "none" : "block";
@@ -24,18 +25,18 @@ document.addEventListener("DOMContentLoaded", function () {
             if (isVisible) {
                 el.classList.add("active");
             } else {
-                el.classList.remove("active"); // يعيد تشغيل الأنيميشن عند الخروج
+                el.classList.remove("active"); 
             }
         });
     }
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // تشغيل التحقق فور تحميل الصفحة
+    handleScroll(); 
 });
 // Dynamic text 
 document.addEventListener("DOMContentLoaded", function () {
     const textElement = document.getElementById("dynamic-text");
-    const texts = ["Digital Library", "Explore Books", "Read Anytime"];
+    const texts = ["RFOUF", "Explore Books", "Read Anytime"];
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -55,36 +56,16 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => (isDeleting = true), 1000);
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
-            textIndex = (textIndex + 1) % texts.length; 
+            textIndex = (textIndex + 1) % texts.length;
         }
 
-        setTimeout(typeEffect, isDeleting ? 80 : 150); // سرعة الحذف أسرع قليلًا
+        setTimeout(typeEffect, isDeleting ? 80 : 150);
     }
 
-    setTimeout(typeEffect, 500); // بدء تشغيل الدالة بعد تحميل الصفحة
+    setTimeout(typeEffect, 500);
 });
 
 
-// ✅ منع الدخول للصفحة الرئيسية بدون تسجيل دخول
-document.addEventListener("DOMContentLoaded", function () {
-    if (!sessionStorage.getItem("loggedIn")) {
-        window.location.replace("./login.html");
-    }
-
-    // ✅ منع الرجوع للصفحة بعد تسجيل الخروج
-    window.history.pushState(null, null, window.location.href);
-    window.onpopstate = function () {
-        window.history.go(1);
-    };
-});
-
-// ✅ نظام تسجيل الخروج
-document.getElementById("logout").addEventListener("click", function (event) {
-    event.preventDefault(); // يمنع التنقل الفوري حتى يتم التنفيذ
-    sessionStorage.removeItem("loggedIn"); // إزالة حالة تسجيل الدخول
-    localStorage.setItem("exited", "true"); // تعيين علامة الخروج لمنع الرجوع
-    window.location.replace("./login.html"); // تحويل المستخدم لصفحة تسجيل الدخول
-});
 
 
 // كود الغاء الfooter ف اول الصفحه
@@ -100,12 +81,12 @@ document.addEventListener("scroll", function () {
     if (scrollPosition >= pageHeight - 50) {
         footer.classList.add("show");
         footer.classList.remove("hide");
-    } 
+    }
     // إذا كان المستخدم يقوم بالتمرير للأعلى، نخفي الفوتر بتأثير fade-out
     else if (window.scrollY < lastScrollY) {
         footer.classList.add("hide");
         footer.classList.remove("show");
     }
-    
+
     lastScrollY = window.scrollY;
 });

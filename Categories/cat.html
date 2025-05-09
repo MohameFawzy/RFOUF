@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Categories</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <ul>
+          <li onclick="location.href='../Home.html'"><a href="../Home.html"><i
+                      class="fas fa-home"></i><span>Home</span></a></li>
+          <li onclick="location.href='../Trending.html'"><a href="../Trending.html"><i class="fas fa-fire"></i><span>Trending</span></a></li>
+          <li onclick="location.href='../library.html'"><a href="../library.html"><i
+                      class="fas fa-book"></i><span>Library</span></a></li>
+          <li onclick="location.href='./cat.html'"><a href="./cat.html"><i
+                      class="fas fa-layer-group"></i><span>Categories</span></a></li>
+          <li onclick="location.href='../profile.html'"><a href="../profile.html"><i
+                      class="fas fa-user"></i><span>Profile</span></a></li>
+          <li onclick="location.href='../Settings.html'"><a href="../Settings.html"><i
+                      class="fas fa-cog"></i><span>Settings</span></a></li>
+          <li onclick="location.href='../FaQ.html'"><a href="../FaQ.html"><i
+                      class="fas fa-question-circle"></i><span>Q&A</span></a></li>
+          <li onclick="location.href='../login.html'"><a href="../login.html" id="logout"><i
+                      class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
+      </ul>
+  </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." id="searchInput" />
+          <button onclick="handleSearch()"></button>
+        </div>
+      </div>
+
+      <!-- Book Categories -->
+      <div class="categories-grid">
+        <a href="novels.html"><div class="category-card">Novels</div></a>
+        <a href="./علوم/science.html"><div class="category-card">Science</div></a>
+        <a href="./تاريخ/history.html"><div class="category-card">History</div></a>
+        <a href="./تطوير ذات/تطوير ذات.html"><div class="category-card">Self Development</div></a>
+        <a href="./اطفال/kids.html"><div class="category-card">Children</div></a>
+        <a href="./قصص مصورة/comics.html"><div class="category-card">Comics</div></a>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2025 Digital Library. All rights reserved. <a href="#">Privacy Policy</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #3a2f14;
+  color: white;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #3a2400;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #e0ac69, #b57f50);
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(255, 223, 186, 0.5);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #b57f50, #8f5e30);
+  box-shadow: 0 0 12px rgba(255, 223, 186, 0.8);
+}
+
+::-webkit-scrollbar-corner {
+  background: #3a2400;
+}
+
+
+#sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 60px;
+  height: calc(100vh - 60px);
+  background: #5e441d;
+  padding-top: 20px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+#sidebar:hover {
+  width: 200px;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sidebar ul li {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  transition: background 0.3s;
+}
+
+#sidebar ul li:hover {
+  background: #3E2723;
+}
+
+#sidebar ul li a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+#sidebar ul li i {
+  font-size: 20px;
+  width: 40px;
+  text-align: center;
+  transition: transform 0.3s, color 0.3s;
+}
+
+#sidebar ul li i:hover {
+  color: chocolate;
+  transform: scale(1.2);
+}
+
+#sidebar ul li span {
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, margin-left 0.3s;
+  margin-left: 0;
+}
+
+#sidebar:hover ul li span {
+  opacity: 1;
+  margin-left: 10px;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.main-content {
+  flex: 1;
+  background-image: url('library-background.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  position: relative;
+  margin-left: 60px; 
+  transition: margin-left 0.3s;
+}
+
+#sidebar:hover ~ .main-content {
+  margin-left: 200px;
+}
+
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.search-bar {
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  border: none;
+  padding: 10px;
+  outline: none;
+  width: 200px;
+  font-size: 16px;
+}
+
+.search-bar button {
+  border: none;
+  background-color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  row-gap: 80px;  
+  column-gap: 40px;  
+  margin-top: 50px;
+  background-color: rgba(42, 33, 15, 0.85);
+  padding: 40px; 
+  border-radius: 15px;  
+  justify-items: center;
+}
+
+.category-card {
+  width: 250px; 
+  height: 150px;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #d1a25c;
+  border-radius: 15px; 
+  font-weight: bold;
+  font-size: 22px; 
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  background-color: #5a4824;
+  transform: scale(1.1);  
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #2a210f;
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+</style>
+
+<script>
+
+
+function handleSearch() {
+  const query = document.getElementById("searchInput").value;
+  alert("You searched for: " + query);
+}
+
+//  side bar animation code 
+function toggleSidebar() {
+  var sidebar = document.getElementById("sidebar");
+  sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+}
+</script>

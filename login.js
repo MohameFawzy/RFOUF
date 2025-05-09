@@ -1,11 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     const loginForm = document.querySelector("form");
-
-    //  منع المستخدم من العودة للصفحة الرئيسية بعد تسجيل الخروج
-    if (localStorage.getItem("exited")) {
-        history.replaceState(null, null, "login.html");
-    }
-
     loginForm.addEventListener("submit", function (event) {
         event.preventDefault(); // منع إرسال الفورم فعليًا
 
@@ -13,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!storedUserData) {
             alert("No account found. Please register first.");
-            window.location.href = "./index.html";
+            window.location.href = "./sign up.html";
             return;
         }
 
@@ -22,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const enteredPass = document.getElementById("password").value.trim();
 
         if (enteredUser === userData.username && enteredPass === userData.password) {
-            alert("Login successful!");
+
             sessionStorage.setItem("loggedIn", "true"); //  تخزين حالة تسجيل الدخول
             localStorage.removeItem("exited"); //  إزالة حالة تسجيل الخروج
             window.location.replace("./Home.html"); // توجيه المستخدم للصفحة الرئيسية
@@ -31,6 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+
 
 
 // footer

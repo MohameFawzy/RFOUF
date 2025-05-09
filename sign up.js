@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent actual form submission
+        event.preventDefault(); 
 
         const email = document.getElementById("Email").value;
         const phone = phoneInput.value;
@@ -45,10 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         localStorage.setItem("userData", JSON.stringify(userData));
-        alert("Sign-up successful! Redirecting to login page...");
         window.location.href = "./login.html";
     });
 });
+
 
 
 // footer after 1s
