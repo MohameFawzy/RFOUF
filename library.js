@@ -188,3 +188,13 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(typeEffect, 500); // بدء تشغيل الدالة بعد تحميل الصفحة
 });
 
+    document.querySelectorAll("#sidebar li").forEach(function(li) {
+        li.addEventListener("click", function(e) {
+            if (e.target.tagName.toLowerCase() !== 'a') {
+                const link = li.querySelector("a");
+                if (link) {
+                    window.location.href = link.href;
+                }
+            }
+        });
+    });
