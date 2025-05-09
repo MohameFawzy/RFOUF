@@ -13,17 +13,17 @@
 <body>
   <div id="sidebar">
     <ul>
-        <li><a href="/digital-library/Home.html"><i class="fas fa-home"></i><span>Home</span></a></li>
-        <li><a href="/digital-library/Trending.html"><i class="fas fa-fire"></i><span>Trending</span></a></li>
-        <li><a href="/digital-library/library.html"><i class="fas fa-book"></i><span>Library</span></a></li>
-        <li><a href="/digital-library/cat.html"><i class="fas fa-layer-group"></i><span>Categories</span></a></li>
-        <li><a href="/digital-library/profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
-        <li><a href="/digital-library/Settings.html"><i class="fas fa-cog"></i><span>Settings</span></a></li>
-        <li><a href="/digital-library/FaQ.html"><i class="fas fa-question-circle"></i><span>Q&A</span></a></li>
-        <li><a href="/digital-library/login.html" id="logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
-    </ul>
-</div>
+      <li><a href="./Home.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li><a href="./Trending.html"><i class="fas fa-fire"></i><span>Trending</span></a></li>
+      <li><a href="./library.html"><i class="fas fa-book"></i><span>Library</span></a></li>
+      <li><a href="./Categories/cat.html"><i class="fas fa-layer-group"></i><span>Categories</span></a></li>
+      <li><a href="./profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
+      <li><a href="./Settings.html"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+      <li><a href="./FaQ.html"><i class="fas fa-question-circle"></i><span>Q&A</span></a></li>
+      <li><a href="./login.html" id="logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
 
+    </ul>
+  </div>
 
   <div class="settings-container">
     <h2>Settings</h2>
@@ -75,35 +75,22 @@
   <footer class="footer">
     <p>© 2025 Digital Library. All rights reserved.</p>
     <div class="social-icons">
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
     <nav>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-        <a href="#">Privacy</a>
-        <a href="#">Privacy</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy</a>
+      <a href="#">Privacy</a>
     </nav>
-</footer>
+  </footer>
 
   <script src="settings.js"></script>
 </body>
-<script>
-  document.querySelectorAll("#sidebar li").forEach(function(li) {
-      li.addEventListener("click", function(e) {
-          if (e.target.tagName.toLowerCase() !== 'a') {
-              const link = li.querySelector("a");
-              if (link) {
-                  window.location.href = link.href;
-              }
-          }
-      });
-  });
-</script>
-
 
 </html>

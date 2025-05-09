@@ -14,17 +14,17 @@
 <body>
   <div id="sidebar">
     <ul>
-        <li><a href="/digital-library/Home.html"><i class="fas fa-home"></i><span>Home</span></a></li>
-        <li><a href="/digital-library/Trending.html"><i class="fas fa-fire"></i><span>Trending</span></a></li>
-        <li><a href="/digital-library/library.html"><i class="fas fa-book"></i><span>Library</span></a></li>
-        <li><a href="/digital-library/cat.html"><i class="fas fa-layer-group"></i><span>Categories</span></a></li>
-        <li><a href="/digital-library/profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
-        <li><a href="/digital-library/Settings.html"><i class="fas fa-cog"></i><span>Settings</span></a></li>
-        <li><a href="/digital-library/FaQ.html"><i class="fas fa-question-circle"></i><span>Q&A</span></a></li>
-        <li><a href="/digital-library/login.html" id="logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
+<li><a href="./Home.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+<li><a href="./Trending.html"><i class="fas fa-fire"></i><span>Trending</span></a></li>
+<li><a href="./library.html"><i class="fas fa-book"></i><span>Library</span></a></li>
+<li><a href="./Categories/cat.html"><i class="fas fa-layer-group"></i><span>Categories</span></a></li>
+<li><a href="./profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
+<li><a href="./Settings.html"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+<li><a href="./FaQ.html"><i class="fas fa-question-circle"></i><span>Q&A</span></a></li>
+<li><a href="./login.html" id="logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
+
     </ul>
 </div>
-
 
   <div class="content">
     <div class="user-info">
@@ -64,17 +64,5 @@
     </nav>
   </footer>
 </body>
-<script>
-  document.querySelectorAll("#sidebar li").forEach(function(li) {
-      li.addEventListener("click", function(e) {
-          if (e.target.tagName.toLowerCase() !== 'a') {
-              const link = li.querySelector("a");
-              if (link) {
-                  window.location.href = link.href;
-              }
-          }
-      });
-  });
-</script>
 
 </html>
